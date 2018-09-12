@@ -197,11 +197,7 @@
   <path id="java-test-respository.module.bootclasspath">
     <!-- Paths to be included in compilation bootclasspath -->
   </path>
-  
-  <path id="java-test-respository.module.production.classpath"/>
-  
-  <path id="java-test-respository.runtime.production.module.classpath"/>
-  
+
   <path id="java-test-respository.module.classpath"/>
   
   <path id="java-test-respository.runtime.module.classpath"/>
@@ -216,11 +212,9 @@
   </patternset>
   
   
-  <target name="compile.module.java-test-respository" depends="compile.module.java-test-respository.production,compile.module.java-test-respository.tests" description="Compile module java-test-respository"/>
-  
-  <target name="compile.module.java-test-respository.production" depends="register.custom.compilers" description="Compile module java-test-respository; production classes"/>
-  
-  <target name="compile.module.java-test-respository.tests" depends="register.custom.compilers,compile.module.java-test-respository.production" description="compile module java-test-respository; test classes" unless="skip.tests"/>
+  <target name="compile.module.java-test-respository" depends="compile.module.java-test-respository.tests" description="Compile module java-test-respository"/>
+
+  <target name="compile.module.java-test-respository.tests" depends="register.custom.compilers" description="compile module java-test-respository; test classes" unless="skip.tests"/>
   
   <target name="clean.module.java-test-respository" description="cleanup module">
     <delete dir="${java-test-respository.output.dir}"/>
@@ -239,29 +233,12 @@
   
   <property name="compiler.args.java-test-respository1" value="-encoding UTF-8 -source 9 -target 9 ${compiler.args}"/>
   
-  <property name="java-test-respository1.output.dir" value="${module.java-test-respository1.basedir}/out/production/java-test-respository1"/>
   <property name="java-test-respository1.testoutput.dir" value="${module.java-test-respository1.basedir}/out/test/java-test-respository1"/>
   
   <path id="java-test-respository1.module.bootclasspath">
     <!-- Paths to be included in compilation bootclasspath -->
   </path>
-  
-  <path id="java-test-respository1.module.production.classpath">
-    <path refid="${module.jdk.classpath.java-test-respository1}"/>
-    <pathelement location="${path.variable.maven_repository}/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar"/>
-    <pathelement location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-api/5.0.0/junit-jupiter-api-5.0.0.jar"/>
-    <pathelement location="${path.variable.maven_repository}/org/junit/platform/junit-platform-commons/1.0.0/junit-platform-commons-1.0.0.jar"/>
-    <pathelement location="${path.variable.maven_repository}/org/opentest4j/opentest4j/1.0.0/opentest4j-1.0.0.jar"/>
-  </path>
-  
-  <path id="java-test-respository1.runtime.production.module.classpath">
-    <pathelement location="${java-test-respository1.output.dir}"/>
-    <pathelement location="${path.variable.maven_repository}/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar"/>
-    <pathelement location="${path.variable.maven_repository}/org/junit/jupiter/junit-jupiter-api/5.0.0/junit-jupiter-api-5.0.0.jar"/>
-    <pathelement location="${path.variable.maven_repository}/org/junit/platform/junit-platform-commons/1.0.0/junit-platform-commons-1.0.0.jar"/>
-    <pathelement location="${path.variable.maven_repository}/org/opentest4j/opentest4j/1.0.0/opentest4j-1.0.0.jar"/>
-  </path>
-  
+
   <path id="java-test-respository1.module.classpath">
     <path refid="${module.jdk.classpath.java-test-respository1}"/>
     <pathelement location="${java-test-respository1.output.dir}"/>
@@ -284,9 +261,6 @@
   <patternset id="excluded.from.module.java-test-respository1">
     <patternset refid="ignored.files"/>
     <exclude name="out/**"/>
-    <exclude name="out/production/**"/>
-    <exclude name="out/production/java-test-respository1/**"/>
-    <exclude name="out/production/java-test-respository1/.idea/**"/>
   </patternset>
   
   <patternset id="excluded.from.compilation.java-test-respository1">
@@ -300,9 +274,9 @@
   </path>
   
   
-  <target name="compile.module.java-test-respository1" depends="compile.module.java-test-respository1.production,compile.module.java-test-respository1.tests" description="Compile module java-test-respository1"/>
+  <target name="compile.module.java-test-respository1" depends="compile.module.java-test-respository1.tests" description="Compile module java-test-respository1"/>
   
-  <target name="compile.module.java-test-respository1.tests" depends="register.custom.compilers,compile.module.java-test-respository1.production" description="compile module java-test-respository1; test classes" unless="skip.tests"/>
+  <target name="compile.module.java-test-respository1.tests" depends="register.custom.compilers" description="compile module java-test-respository1; test classes" unless="skip.tests"/>
   
   <target name="clean.module.java-test-respository1" description="cleanup module">
     <delete dir="${java-test-respository1.output.dir}"/>

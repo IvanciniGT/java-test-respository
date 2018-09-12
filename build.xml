@@ -13,6 +13,7 @@
   <property name="report.dir" location="report" />
   <property name="bin" value="bin" />
   <property name="bin.classes" location="${bin}/classes" />
+  <property name="doc.dir" location="doc" />
 
 
   <!-- Compile Java source from ${src.dir} and output it to ${bin.classes} -->
@@ -25,6 +26,9 @@
     </javac>
   </target>
 
+  <target name="doc" depends="init" description="generate documentation">
+    <javadoc sourcepath="${src.dir}" destdir="${doc.dir}"/>
+  </target>
   <!-- Run jUnit -->
   <target name="junit" depends="compile">
 <!--

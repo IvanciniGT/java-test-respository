@@ -20,7 +20,7 @@
     <mkdir dir="${bin.classes}" />
     <javac destdir="${bin.classes}" source="${jdk.version}"
            target="${jdk.version}" debug="true"
-           includeantruntime="false" >
+           includeantruntime="false" classpath="./junit-4.10.jar">
       <src path="${src.dir}" />
     </javac>
   </target>

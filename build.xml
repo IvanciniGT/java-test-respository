@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="java-test-respository" default="all">
+<project name="java-test-respository" default="main">
 
   <description>
     Running junit Test
@@ -28,7 +28,7 @@
 
   <target name="doc" depends="init" description="generate documentation">
     <mkdir dir="${doc.dir}" />
-    <javadoc packagenames="*" sourcepath="${src.dir}" destdir="${doc.dir}"/>
+    <javadoc sourcefiles="*.java" destdir="${doc.dir}"/>
   </target>
   <!-- Run jUnit -->
   <target name="junit" depends="compile">

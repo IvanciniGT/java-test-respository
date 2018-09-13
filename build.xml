@@ -28,7 +28,7 @@
 
   <target name="doc" depends="init" description="generate documentation">
     <mkdir dir="${doc.dir}" />
-    <javadoc sourcefiles="*.java" destdir="${doc.dir}"/>
+    <javadoc sourcefiles="Program.java" destdir="${doc.dir}"/>
   </target>
   <!-- Run jUnit -->
   <target name="junit" depends="compile">
